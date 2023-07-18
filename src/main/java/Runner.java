@@ -14,7 +14,7 @@ public class Runner {
         scottishIslands.add("Arran");
         scottishIslands.add("Tresco");
         scottishIslands.add("Collin");
-        
+
 
 //        1. Add "Coll" to the end of the list
 //        2. Add "Tiree" to the start of the list
