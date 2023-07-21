@@ -13,7 +13,6 @@ public class Runner {
         scottishIslands.add("Skye");
         scottishIslands.add("Arran");
         scottishIslands.add("Tresco");
-        scottishIslands.add("Collin");
 
 //        1. Add "Coll" to the end of the list
         scottishIslands.add("Collin");
@@ -44,7 +43,7 @@ public class Runner {
 //        8. Sort the list alphabetically
             Collections.sort(scottishIslands);
 
-//         ArrayList<String> sortedIslands = Collections.sort(scottishIslands);
+//        ArrayList<String> sortedIslands = Collections.sort(scottishIslands);
 //        The above will not work. Will not work - sort is a void method.
 //        It does not return anything. Void does not return anything.
 //        You can store the result of the sort as a variable
