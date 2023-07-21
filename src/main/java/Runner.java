@@ -22,7 +22,7 @@ public class Runner {
         System.out.println("Second task: " + scottishIslands);
 
 //        3. Add "Islay" after "Jura" and before "Mull"
-        scottishIslands.add(1,"Islay");
+        scottishIslands.add(1, "Islay");
         // Could also write:
         scottishIslands.add(scottishIslands.indexOf("Jura") + 1, "Islay");
 
@@ -38,10 +38,10 @@ public class Runner {
         scottishIslands.remove(5);
 //        7. Print the number of islands in your arraylist
         int numberOfIslands = scottishIslands.size();
-            System.out.println("number of Islands:" + numberOfIslands);
+        System.out.println("number of Islands:" + numberOfIslands);
 
 //        8. Sort the list alphabetically
-            Collections.sort(scottishIslands);
+        Collections.sort(scottishIslands);
 
 //        ArrayList<String> sortedIslands = Collections.sort(scottishIslands);
 //        The above will not work. Will not work - sort is a void method.
@@ -59,20 +59,19 @@ public class Runner {
         }
 
 //        NUMBERS
-        List<Integer> numbers = new ArrayList<>();
-        Collections.addAll(numbers, 1, 1, 4, 2, 7, 1, 6, 15, 13, 99, 7);
-        System.out.println("numbers: " + numbers);
 //        How to set up array list quickly: create an empty array list
 //        First argument is number, second is separated elements
 //        Don't have to write number.add(number) 20 times
 
 //        1. Print out a list of the even integers
-        List<Integer> evenNumbers = new ArrayList<>();
-        for (int number : numbers){
-            if (number % 2 == 0) {
+        List<Integer> numbers = new ArrayList<>();
+        Collections.addAll(numbers, 1, 1, 4, 2, 7, 1, 6, 15, 13, 99, 7);
+        ArrayList<List<Integer>> evenNumbers = new ArrayList<>();
+        for (int readingNumber : numbers) {
+            if (readingNumber % 2 == 0) {
 //      here 0 represents any remainders - no remainders
 //      must be even!
-                evenNumbers.add(number);
+                evenNumbers.add(numbers);
             }
         }
         System.out.println("even numbers: " + evenNumbers);
@@ -84,14 +83,47 @@ public class Runner {
 //        print out at the end the filtered list
 
 //        2. Print the difference between the largest and smallest value
+        int maxNumber = Collections.max(numbers);
+        int minNumber = Collections.min(numbers);
+        int diffInNumbers = maxNumber - minNumber;
+        System.out.println("Difference between the largest and min value: " + diffInNumbers);
 //        3. Print True if the list contains a 1 next to a 1 somewhere.
+//                boolean result = false;
+//                for (int i = 0; i < numbers.size(); i++) {
+//                    if (numbers.get(i) == 1 && numbers.get(i + 1) == 1){
+//                        result = true;
+//                    }
+//                }
+//                    System.out.println(result);
+//        }
+//    With i (index) you can access the list
+//    when you run a classic for loop with syntax i you have access to the index
+//    this means in a signle iteration you can check the current item
+//    and the prev/next item aswell because you have the index.
+//    with a regular for loop you can't check two numbers same time!
 //        4. Print the sum of the numbers,
+        int total = 0;
+        for (int number : numbers) {
+            total += number;
+        }
+        System.out.println("Total: " + total);
+//    cannot keep accumlator inside the for lopp - it needs to stay outside
+//    otherwise it gets reset to 0 every time.
+
 //        5. Print the sum of the numbers...
 //           ...except the number 13 is unlucky, so it does not count...
 //           ...and numbers that come immediately after a 13 also do not count.
 //
 //          So [2, 7, 13, 2] would have sum of 9.
-
+//          use continue if you want to skip 13
+//          use break if you want to not count anything after 13.
+        int sumOfNumbers = 0;
+        for (int number : numbers) {
+            if (number == 13) {
+                break;
+            }
+            total += number;
+        }
     }
-
 }
+
